@@ -1,0 +1,24 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class GridSpacePvP : MonoBehaviour {
+
+	public Button button;
+	public Text buttonText;
+
+	private GameControllerPvP gameController;
+
+	public void SetSpace()
+	{
+			buttonText.text = gameController.GetPlayerSide();
+			button.interactable = false;
+			gameController.EndTurn ();
+	}
+
+	public void SetGameControllerReference(GameControllerPvP controller)
+	{
+		gameController = controller;
+	}
+}
